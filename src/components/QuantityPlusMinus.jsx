@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cartItems, decrement, increment, removeFromCart } from "../ItemsSlice";
+import { cartItems, decrement, increment, removeFromCart } from "../features/slices/ItemsSlice";
 
-function IncreDecre({ name, id }) {
+function QuantityPlusMinus({ name, id }) {
   const dispatch = useDispatch();
   const cart = useSelector(cartItems);
   const itemQuantity = cart.find((item) => item.id === id);
@@ -24,14 +24,14 @@ function IncreDecre({ name, id }) {
     <div className="item-plus-minus">
       <button onClick={() => dispatch(decrement(id))} className="minus">
         <img
-          src={"../public/assets/images/icon-decrement-quantity.svg"}
+          src={"/assets/images/icon-decrement-quantity.svg"}
           alt={name}
         />
       </button>
       <span>{itemQuantity.quantity}</span>
       <button onClick={() => dispatch(increment(id))}>
         <img
-          src={"../public/assets/images/icon-increment-quantity.svg"}
+          src={"/assets/images/icon-increment-quantity.svg"}
           alt={name}
         />
       </button>
@@ -39,4 +39,4 @@ function IncreDecre({ name, id }) {
   );
 }
 
-export default IncreDecre;
+export default QuantityPlusMinus

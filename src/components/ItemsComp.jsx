@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cartItems, removeFromCart } from "../ItemsSlice";
+import { cartItems, removeFromCart } from '../features/slices/ItemsSlice'
 import * as motion from "motion/react-client"
 
 function ItemsComp({
@@ -33,7 +33,7 @@ function ItemsComp({
       {confirmation && (
         <div className="order-image">
           <img
-            src={"../../../public/assets/images/icon-order-confirmed.svg"}
+            src={"/assets/images/icon-order-confirmed.svg"}
             alt="confirmed"
           />
           <h1>Ordered Confirmed</h1>
@@ -65,7 +65,7 @@ function ItemsComp({
               {button ? (
                 <button onClick={() => dispatch(removeFromCart(item.id))}>
                   <img
-                    src={"../public/assets/images/icon-remove-item.svg"}
+                    src={"/assets/images/icon-remove-item.svg"}
                     alt="remove item"
                   />
                 </button>
@@ -83,7 +83,7 @@ function ItemsComp({
         {tree && (
           <div className="tree">
             <img
-              src={"../public/assets/images/icon-carbon-neutral.svg"}
+              src={"/assets/images/icon-carbon-neutral.svg"}
               alt="carbon-neutral"
             />
             <p>

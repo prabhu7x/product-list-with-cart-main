@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadedItems, cartItems } from "../ItemsSlice";
+import { loadedItems, cartItems, startNewOrder } from "../features/slices/ItemsSlice"
 import AddToCart from "./AddToCart";
-import IncreDecre from "./IncreDecre";
+import QuantityPlusMinus from "./QuantityPlusMinus";
 import ItemsComp from "./ItemsComp";
 import EmptyCart from "./EmptyCart";
 
@@ -19,6 +19,7 @@ function ItemsPages() {
   const confirmClicked = () => {
     document.body.classList.remove("overlay");
     setConfirmation(false);
+    dispatch(startNewOrder())
   };
   useEffect(() => {
     dispatch(loadedItems());
@@ -50,7 +51,7 @@ function ItemsPages() {
                 </picture>
                 <div className="add-to-cart-cont">
                   {cart.find((cartItem) => cartItem.id === item.id) ? (
-                    <IncreDecre id={item.id} name={item.name} />
+                    <QuantityPlusMinus id={item.id} name={item.name} />
                   ) : (
                     <AddToCart id={item.id} />
                   )}

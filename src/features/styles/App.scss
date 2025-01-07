@@ -1,15 +1,14 @@
-// @forward 'desktop';
 
 @font-face {
     font-family: 'RedhatItalic';
-    src: url('../../public/assets/fonts/RedHatText-Italic-VariableFont_wght.ttf');
+    src: url('/assets/fonts/RedHatText-Italic-VariableFont_wght.ttf');
     font-style: italic;
     font-weight: 100 900;
 }
 
 @font-face {
     font-family: 'Redhat';
-    src: url('../../public/assets/fonts/RedHatText-VariableFont_wght.ttf');
+    src: url('/assets/fonts/RedHatText-VariableFont_wght.ttf');
     font-style: normal;
 }
 

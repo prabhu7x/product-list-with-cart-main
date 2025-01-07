@@ -1,5 +1,5 @@
-import './build/App.css'
-import ItemsPages from './build/components/ItemsPages'
+import './features/styles/App.css'
+import ItemsPages from './components/ItemsPages'
 
 function App() {
 

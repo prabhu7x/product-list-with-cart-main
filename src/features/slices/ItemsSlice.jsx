@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import data from "../../public/data.json";
+import { createSlice } from "@reduxjs/toolkit";
+import data from '/data.json'
 import { nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -54,10 +54,15 @@ const itemsSlice = createSlice({
         itemToDecrement.quantity -= 1;
       }
     },
+
+    startNewOrder: (state)=>{
+      state.cart = []
+    }
+
   },
 });
 
-export const { loadedItems, addToCart, removeFromCart, increment, decrement } =
+export const { loadedItems, addToCart, removeFromCart, increment, decrement, startNewOrder } =
   itemsSlice.actions;
 export const cartItems = (state) => state.items.cart;
 export default itemsSlice.reducer;
