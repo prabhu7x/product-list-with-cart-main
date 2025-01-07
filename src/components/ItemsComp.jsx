@@ -65,7 +65,8 @@ function ItemsComp({
               {button ? (
                 <button onClick={() => dispatch(removeFromCart(item.id))}>
                   <img
-                    src={"/assets/images/icon-remove-item.svg"}
+                    // src={"/assets/images/icon-remove-item.svg"}
+                    src={"/src/icon-remove-item.svg"}
                     alt="remove item"
                   />
                 </button>
