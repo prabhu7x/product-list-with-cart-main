@@ -1,8 +1,30 @@
-# React + Vite
+# Frontend Mentor - Product List with Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live URL](https://prabhu7x.github.io/product-list-with-cart-main/)
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="src/assets/preview/mobile-Screenshot.png" alt="Image 1" width="45%" />
+  <img src="src/assets/preview/mobile-confirmed.png" alt="Image 2" width="45%" />
+  <img src="src/assets/preview/desktop-Screenshot.png" alt="Image 2" width="45%" />
+  <img src="src/assets/preview/desktop-confirmed.png" alt="Image 2" width="45%" />
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Welcome! 👋
+
+Thanks for checking out this front-end coding challenge.
+
+I designed this challenge with fully responsive according to screen resolution - mobile and Desktop
+
+check out these previews below
+
+
+
+- HTML
+- CSS
+- ReactJS
+    - for state management I used Redux
+
+If you have any suggestions or improvements, feel free to contribute!
+Acknowledgements
+

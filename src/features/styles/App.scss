@@ -67,9 +67,16 @@ $Rose_900: hsl(14, 65%, 9%);
 
             picture {
                 width: 100%;
-                // width: 250px;
-                // height: 250px;
                 border-radius: 10px;
+                img {
+                    transition: 0.3s cubic-bezier(0.15, 0.51, 0.1, 1.01);
+                    border-radius: 10px;
+                    &:hover {
+                        scale: 1.05;
+                        transition: .2s ease-in;
+                        // transition: cubic-bezier(0, 1.02, 0.43, 1.26);
+                    }
+                }
             }
 
             .add-to-cart-cont {
@@ -82,9 +89,9 @@ $Rose_900: hsl(14, 65%, 9%);
                 .add-to-cart-button,
                 .item-plus-minus {
                     display: flex;
+                    gap: .5rem;
                     align-items: center;
                     justify-content: center;
-                    gap: .5rem;
                     padding: .8rem 2rem;
                     border: 1px $Rose_400 solid;
                     border-radius: 130px;
@@ -97,6 +104,9 @@ $Rose_900: hsl(14, 65%, 9%);
                     background-color: white;
                     font-family: 'Redhat';
                     font-weight: 500;
+                    &:hover {
+                        border: $Red 1px solid;
+                    }
 
                     button {
                         all: unset;
@@ -107,18 +117,19 @@ $Rose_900: hsl(14, 65%, 9%);
                     background-color: $Red;
                     display: flex;
                     align-items: center;
-
-                    span {
-                        // margin: 0 3rem;
-                    }
+                    gap: 3.5rem;
 
                     .minus {
                         padding: .54rem .3rem;
                     }
+                    span {
+                        position: absolute;
+                    }
 
                     button {
+                        position: relative;
                         all: unset;
-                        margin: 0 3rem;
+                        margin: 0 2rem;
                         border: solid 1px white;
                         padding: 1px 6px;
                         border-radius: 100%;
@@ -155,6 +166,8 @@ $Rose_900: hsl(14, 65%, 9%);
     background-color: $Rose_50;
     width: 100%;
     border-radius: 10px;
+    margin-right: 1rem;
+    margin-top: -2rem;
 
     h2 {
         padding: 1.5rem;
@@ -307,12 +320,13 @@ $Rose_900: hsl(14, 65%, 9%);
     }
 }
 
-// @media screen and (min-width: 600px) {
-
-// }
-
 
 @media screen and (min-width: 600px) {
+    .items-component .tree {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
     .item-page {
         display: flex;
         flex-direction: row;
@@ -360,7 +374,7 @@ $Rose_900: hsl(14, 65%, 9%);
             padding: 2rem;
             
             .thumbnail-container {
-                min-height: 15rem;
+                max-height: 15rem;
                 overflow-x: hidden;
             }
         }

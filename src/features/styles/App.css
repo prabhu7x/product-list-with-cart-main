@@ -52,6 +52,14 @@ body.overlay .item-page {
   width: 100%;
   border-radius: 10px;
 }
+.item-page .items .thumbnail picture img {
+  transition: 0.3s cubic-bezier(0.15, 0.51, 0.1, 1.01);
+  border-radius: 10px;
+}
+.item-page .items .thumbnail picture img:hover {
+  scale: 1.05;
+  transition: 0.2s ease-in;
+}
 .item-page .items .thumbnail .add-to-cart-cont {
   display: flex;
   align-items: center;
@@ -62,9 +70,9 @@ body.overlay .item-page {
 .item-page .items .thumbnail .add-to-cart-cont .add-to-cart-button,
 .item-page .items .thumbnail .add-to-cart-cont .item-plus-minus {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
   padding: 0.8rem 2rem;
   border: 1px hsl(7, 20%, 60%) solid;
   border-radius: 130px;
@@ -78,6 +86,10 @@ body.overlay .item-page {
   font-family: "Redhat";
   font-weight: 500;
 }
+.item-page .items .thumbnail .add-to-cart-cont .add-to-cart-button:hover,
+.item-page .items .thumbnail .add-to-cart-cont .item-plus-minus:hover {
+  border: hsl(14, 86%, 42%) 1px solid;
+}
 .item-page .items .thumbnail .add-to-cart-cont .add-to-cart-button button,
 .item-page .items .thumbnail .add-to-cart-cont .item-plus-minus button {
   all: unset;
@@ -86,13 +98,18 @@ body.overlay .item-page {
   background-color: hsl(14, 86%, 42%);
   display: flex;
   align-items: center;
+  gap: 3.5rem;
 }
 .item-page .items .thumbnail .add-to-cart-cont .item-plus-minus .minus {
   padding: 0.54rem 0.3rem;
 }
+.item-page .items .thumbnail .add-to-cart-cont .item-plus-minus span {
+  position: absolute;
+}
 .item-page .items .thumbnail .add-to-cart-cont .item-plus-minus button {
+  position: relative;
   all: unset;
-  margin: 0 3rem;
+  margin: 0 2rem;
   border: solid 1px white;
   padding: 1px 6px;
   border-radius: 100%;
@@ -119,6 +136,8 @@ body.overlay .item-page {
   background-color: hsl(20, 50%, 98%);
   width: 100%;
   border-radius: 10px;
+  margin-right: 1rem;
+  margin-top: -2rem;
 }
 .cart-cont h2 {
   padding: 1.5rem;
@@ -243,6 +262,11 @@ body.overlay .item-page {
 }
 
 @media screen and (min-width: 600px) {
+  .items-component .tree {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
   .item-page {
     display: flex;
     flex-direction: row;
@@ -281,7 +305,7 @@ body.overlay .item-page {
     padding: 2rem;
   }
   #confirmation .confirmation .thumbnail-container {
-    min-height: 15rem;
+    max-height: 15rem;
     overflow-x: hidden;
   }
   body.overlay {

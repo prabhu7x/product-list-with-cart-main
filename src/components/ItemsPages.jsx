@@ -5,6 +5,7 @@ import AddToCart from "./AddToCart";
 import QuantityPlusMinus from "./QuantityPlusMinus";
 import ItemsComp from "./ItemsComp";
 import EmptyCart from "./EmptyCart";
+import { motion } from "motion/react";
 
 function ItemsPages() {
   const items = useSelector((state) => state.items.data);
@@ -30,7 +31,11 @@ function ItemsPages() {
       <div className="items">
         {items.map((item) => {
           return (
-            <article  key={item.id}>
+            <motion.article 
+                  initial={{scale: 0}}
+                  animate={{scale: 1}}
+                  transition={{ type: "spring", stiffness: 100, ease: "easeInOut" }}
+                  key={item.id}>
               <figure className="thumbnail">
                 <picture>
                   <source
@@ -62,7 +67,7 @@ function ItemsPages() {
                   <p className="price">${item.price}</p>
                 </figcaption>
               </figure>
-            </article>
+            </motion.article>
           );
         })}{" "}
       </div>

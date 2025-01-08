@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/slices/ItemsSlice";
+import addToCartIcon from '/assets/images/icon-add-to-cart.svg'
 
 function AddToCart({ id }) {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ function AddToCart({ id }) {
       className="add-to-cart-button"
       onClick={() => dispatch(addToCart(id))}
     >
-      <img src={"/assets/images/icon-add-to-cart.svg"} alt="" />
+      <img src={addToCartIcon} alt="" />
       Add to Cart
     </button>
   );

@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cartItems, removeFromCart } from '../features/slices/ItemsSlice'
-import * as motion from "motion/react-client"
+import { cartItems, removeFromCart } from "../features/slices/ItemsSlice";
+import * as motion from "motion/react-client";
+import tickMarkIcon from "/assets/images/icon-order-confirmed.svg"
+import removeIcon from "/assets/images/icon-remove-item.svg";
+import treeIcon from "/assets/images/icon-carbon-neutral.svg"
 
 function ItemsComp({
   confirmationClass,
@@ -25,7 +28,11 @@ function ItemsComp({
     span1: { fontWeight: "500", color: "hsl(14, 86%, 42%)" },
     span3: { fontWeight: "500", color: "hsl(12, 20%, 44%)" },
     thumb: { display: "flex", gap: "1rem" },
-    totalPriceCont: {background: "hsl(13, 31%, 94%)", padding: '0 1.3rem', borderRadius: ' 0 0 10px 10px'}
+    totalPriceCont: {
+      background: "hsl(13, 31%, 94%)",
+      padding: "0 1.3rem",
+      borderRadius: " 0 0 10px 10px",
+    },
   };
 
   return (
@@ -33,7 +40,7 @@ function ItemsComp({
       {confirmation && (
         <div className="order-image">
           <img
-            src={"/assets/images/icon-order-confirmed.svg"}
+            src={tickMarkIcon}
             alt="confirmed"
           />
           <h1>Ordered Confirmed</h1>
@@ -46,9 +53,10 @@ function ItemsComp({
           const { quantity, price } = item;
           return (
             <motion.section
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            key={item.id}>
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              key={item.id}
+            >
               <div style={styles.thumb}>
                 {thumbnail && (
                   <img src={item.image.thumbnail} alt={item.name} />
@@ -64,9 +72,8 @@ function ItemsComp({
               </div>
               {button ? (
                 <button onClick={() => dispatch(removeFromCart(item.id))}>
-                  <img
-                    // src={"/assets/images/icon-remove-item.svg"}
-                    src={"/src/icon-remove-item.svg"}
+                  <img      
+                    src={removeIcon}
                     alt="remove item"
                   />
                 </button>
@@ -84,7 +91,7 @@ function ItemsComp({
         {tree && (
           <div className="tree">
             <img
-              src={"/assets/images/icon-carbon-neutral.svg"}
+              src={treeIcon}
               alt="carbon-neutral"
             />
             <p>
