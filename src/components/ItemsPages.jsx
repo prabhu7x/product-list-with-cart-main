@@ -73,7 +73,7 @@ function ItemsPages() {
           );
         })} 
       </div>
-      <div className="cart-cont">
+      <div className="cart-cont"> 
         <h2>Your Cart ({cart.length})</h2>
         {cart.length === 0 ? (
           <EmptyCart />
