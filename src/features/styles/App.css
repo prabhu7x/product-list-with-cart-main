@@ -48,6 +48,11 @@ body.overlay .item-page {
   width: 100%;
   border-radius: 10px;
 }
+.item-page .items .thumbnail > img {
+  width: 100%;
+  width: 250px;
+  height: 250px;
+}
 .item-page .items .thumbnail picture {
   width: 100%;
   border-radius: 10px;
@@ -86,13 +91,17 @@ body.overlay .item-page {
   font-family: "Redhat";
   font-weight: 500;
 }
-.item-page .items .thumbnail .add-to-cart-cont .add-to-cart-button:hover,
-.item-page .items .thumbnail .add-to-cart-cont .item-plus-minus:hover {
-  border: hsl(14, 86%, 42%) 1px solid;
-}
 .item-page .items .thumbnail .add-to-cart-cont .add-to-cart-button button,
 .item-page .items .thumbnail .add-to-cart-cont .item-plus-minus button {
   all: unset;
+}
+.item-page .items .thumbnail .add-to-cart-cont .add-to-cart-button {
+  transition: 0.1s ease-in-out;
+}
+.item-page .items .thumbnail .add-to-cart-cont .add-to-cart-button:hover {
+  border: hsl(14, 86%, 42%) 1px solid;
+  transition-delay: 0.2s;
+  color: hsl(14, 86%, 42%);
 }
 .item-page .items .thumbnail .add-to-cart-cont .item-plus-minus {
   background-color: hsl(14, 86%, 42%);
@@ -117,6 +126,13 @@ body.overlay .item-page {
   align-items: center;
   justify-content: space-between;
   padding: 0.3rem 0.31rem;
+  transition: 0.1s ease-in-out;
+}
+.item-page .items .thumbnail .add-to-cart-cont .item-plus-minus button:hover {
+  background-color: white;
+}
+.item-page .items .thumbnail .add-to-cart-cont .item-plus-minus button:hover img {
+  filter: brightness(0) saturate(100%);
 }
 .item-page .items .thumbnail .info {
   margin: 1rem 0;

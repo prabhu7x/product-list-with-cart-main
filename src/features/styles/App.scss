@@ -64,6 +64,11 @@ $Rose_900: hsl(14, 65%, 9%);
                 width: 100%;
                 border-radius: 10px;
             }
+            &>img {
+                width: 100%;
+                width: 250px;
+                height: 250px;
+            }
 
             picture {
                 width: 100%;
@@ -104,12 +109,18 @@ $Rose_900: hsl(14, 65%, 9%);
                     background-color: white;
                     font-family: 'Redhat';
                     font-weight: 500;
-                    &:hover {
-                        border: $Red 1px solid;
-                    }
 
                     button {
                         all: unset;
+                    }
+                }
+
+                .add-to-cart-button {
+                    transition: .1s ease-in-out;
+                    &:hover {
+                        border: $Red 1px solid;
+                        transition-delay: .2s;
+                        color: $Red;
                     }
                 }
 
@@ -137,6 +148,13 @@ $Rose_900: hsl(14, 65%, 9%);
                         align-items: center;
                         justify-content: space-between;
                         padding: .3rem .31rem;
+                        transition: .1s ease-in-out;
+                        &:hover {
+                            background-color: white;
+                            img {
+                                filter: brightness(0) saturate(100%);
+                            }
+                        }
                     }
                 }
             }

@@ -5,7 +5,7 @@ import AddToCart from "./AddToCart";
 import QuantityPlusMinus from "./QuantityPlusMinus";
 import ItemsComp from "./ItemsComp";
 import EmptyCart from "./EmptyCart";
-import { motion } from "motion/react";
+import {  motion } from "motion/react";
 
 function ItemsPages() {
   const items = useSelector((state) => state.items.data);
@@ -26,16 +26,18 @@ function ItemsPages() {
     dispatch(loadedItems());
   }, [dispatch]);
 
+
   return (
     <div className="item-page">
       <div className="items">
         {items.map((item) => {
           return (
             <motion.article 
+                  key={item.id}
                   initial={{scale: 0}}
                   animate={{scale: 1}}
                   transition={{ type: "spring", stiffness: 100, ease: "easeInOut" }}
-                  key={item.id}>
+                  >
               <figure className="thumbnail">
                 <picture>
                   <source
@@ -69,7 +71,7 @@ function ItemsPages() {
               </figure>
             </motion.article>
           );
-        })}{" "}
+        })} 
       </div>
       <div className="cart-cont">
         <h2>Your Cart ({cart.length})</h2>

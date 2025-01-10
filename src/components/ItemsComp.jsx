@@ -5,6 +5,7 @@ import * as motion from "motion/react-client";
 import tickMarkIcon from "/assets/images/icon-order-confirmed.svg"
 import removeIcon from "/assets/images/icon-remove-item.svg";
 import treeIcon from "/assets/images/icon-carbon-neutral.svg"
+import { AnimatePresence } from "motion/react";
 
 function ItemsComp({
   confirmationClass,
@@ -49,13 +50,15 @@ function ItemsComp({
       )}
 
       <div className="thumbnail-container">
+        <AnimatePresence>
         {cart.map((item) => {
           const { quantity, price } = item;
           return (
             <motion.section
+              key={item.id}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              key={item.id}
+              exit={{opacity: 0, scale: 0,}}
             >
               <div style={styles.thumb}>
                 {thumbnail && (
@@ -82,7 +85,7 @@ function ItemsComp({
               )}
             </motion.section>
           );
-        })}
+        })} </AnimatePresence>
       </div>
       <div style={!button ? styles.totalPriceCont : null}>
         <p className="total-price">
