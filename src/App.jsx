@@ -9,7 +9,7 @@ function App() {
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     transition={{duration: 0.3, delay: .2, ease: "linear"}}
-     className='app'>
+    className='app'>
       <h1 className="title">Desserts</h1>
     <ItemsPages />
     </motion.div>

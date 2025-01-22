@@ -42,12 +42,17 @@ $Rose_900: hsl(14, 65%, 9%);
 
 .app {
     background-color: $Rose_100;
+    padding: 1.5rem;
 
     .title {
         padding: 1.5rem;
         padding-bottom: 0;
         background-color: $Rose_100;
     }
+}
+
+button {
+    cursor: pointer;
 }
 
 .item-page {

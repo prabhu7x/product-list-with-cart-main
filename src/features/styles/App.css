@@ -29,11 +29,16 @@ body.overlay .item-page {
 
 .app {
   background-color: hsl(13, 31%, 94%);
+  padding: 1.5rem;
 }
 .app .title {
   padding: 1.5rem;
   padding-bottom: 0;
   background-color: hsl(13, 31%, 94%);
+}
+
+button {
+  cursor: pointer;
 }
 
 .item-page .items {
