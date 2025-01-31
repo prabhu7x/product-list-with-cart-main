@@ -38,7 +38,7 @@ body.overlay .item-page {
 }
 
 button {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .item-page .items {
